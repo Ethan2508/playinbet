@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+body {
+  background-color: #121212;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

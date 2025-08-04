@@ -1,0 +1,571 @@
+/* Variables CSS pour la cohérence des couleurs */
+:root {
+  --primary-color: #00BFFF;
+  --secondary-color: #1e1e2e;
+  --dark-bg: #0f0c29;
+  --medium-bg: #302b63;
+  --light-bg: #24243e;
+  --text-light: #ffffff;
+  --text-muted: #b0b0b0;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+  --glassmorphism-bg: rgba(255, 255, 255, 0.05);
+  --glassmorphism-border: rgba(255, 255, 255, 0.1);
+  
+  /* Override Bootstrap modal variables */
+  --bs-modal-bg: rgba(15, 12, 41, 0.85) !important;
+  --bs-modal-color: white !important;
+  --bs-modal-border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============ SUPPRESSION NUCLÉAIRE DE TOUS LES FONDS BLANCS ============ */
+/* Force TOUS les éléments à ne pas avoir de fond blanc */
+*[style*="background-color: white"],
+*[style*="background-color: #fff"],
+*[style*="background-color: #ffffff"],
+*[style*="background: white"],
+*[style*="background: #fff"],
+*[style*="background: #ffffff"],
+.modal-content,
+.modal .modal-content,
+.modal-dialog .modal-content,
+div.modal-content,
+.dropdown-menu,
+.popover,
+.tooltip-inner,
+.card,
+.list-group-item,
+.nav-tabs .nav-link.active,
+.pagination .page-link,
+.breadcrumb,
+.alert,
+.badge,
+.btn-light,
+.bg-white,
+.bg-light,
+.table,
+.form-control,
+.form-select,
+.input-group-text,
+.accordion-item,
+.offcanvas,
+.toast,
+form {
+  background: rgba(15, 12, 41, 0.75) !important;
+  background-color: rgba(15, 12, 41, 0.75) !important;
+  background-image: none !important;
+  color: white !important;
+}
+
+/* SUPPRESSION SPÉCIFIQUE POUR TOUS LES FORMULAIRES */
+form,
+div form,
+.modal form,
+.modal-content form,
+.modal-dialog form,
+.modal-body form,
+form.needs-validation,
+form[novalidate] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Suppression spéciale pour tous les types de modals */
+.modal-content,
+div.modal-content,
+.modal .modal-content,
+.modal-dialog .modal-content,
+.modal .modal-dialog .modal-content,
+.modal.show .modal-dialog .modal-content,
+.modal.fade .modal-dialog .modal-content,
+.modal.fade.show .modal-dialog .modal-content,
+.modal-custom .modal-content,
+.modal.modal-custom .modal-content,
+.modal.show.modal-custom .modal-content,
+.modal.modal-custom .modal-dialog .modal-content,
+.modal.show.modal-custom .modal-dialog .modal-content,
+div.modal-custom .modal-content,
+.modal-custom .modal-dialog .modal-content {
+  background: rgba(15, 12, 41, 0.75) !important;
+  background-color: rgba(15, 12, 41, 0.75) !important;
+  background-image: none !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glassmorphism-border) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2) !important;
+}
+
+/* Supprime tous les fonds blancs par attribut style inline */
+[style*="background-color: #fff"],
+[style*="background-color: white"],
+[style*="background-color: #ffffff"],
+[style*="background: #fff"],
+[style*="background: white"],
+[style*="background: #ffffff"] {
+  background: rgba(15, 12, 41, 0.75) !important;
+  background-color: rgba(15, 12, 41, 0.75) !important;
+}
+/* ====================== FIN SUPPRESSION NUCLÉAIRE ====================== */
+
+/* Force ULTIME pour tous les modal-content - surcharge absolue de Bootstrap */
+.modal-content,
+div.modal-content,
+.modal .modal-content,
+.modal-dialog .modal-content,
+.modal .modal-dialog .modal-content,
+.modal.show .modal-dialog .modal-content,
+.modal.fade .modal-dialog .modal-content,
+.modal.fade.show .modal-dialog .modal-content,
+.modal-custom .modal-content,
+.modal.modal-custom .modal-content,
+.modal.show.modal-custom .modal-content,
+.modal.modal-custom .modal-dialog .modal-content,
+.modal.show.modal-custom .modal-dialog .modal-content,
+div.modal-custom .modal-content,
+.modal-custom .modal-dialog .modal-content {
+  background: rgba(15, 12, 41, 0.75) !important;
+  background-color: rgba(15, 12, 41, 0.75) !important;
+  background-image: none !important;
+}
+
+/* Force encore plus spécifique pour surcharger Bootstrap 5 */
+.modal .modal-dialog .modal-content,
+.modal.show .modal-dialog .modal-content,
+.modal.fade .modal-dialog .modal-content,
+.modal.fade.show .modal-dialog .modal-content {
+  background: rgba(15, 12, 41, 0.75) !important;
+  background-color: rgba(15, 12, 41, 0.75) !important;
+  background-image: none !important;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--dark-bg), var(--medium-bg), var(--light-bg));
+  background-attachment: fixed;
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Styles pour les cartes */
+.card-custom {
+  background: var(--glassmorphism-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glassmorphism-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  color: var(--text-light);
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Override Bootstrap dark classes */
+.bg-dark {
+  background-color: var(--glassmorphism-bg) !important;
+  backdrop-filter: blur(10px);
+}
+
+.text-white {
+  color: var(--text-light) !important;
+}
+
+/* Amélioration des contrastes */
+.text-dark {
+  color: var(--text-light) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-secondary {
+  color: #d0d0d0 !important;
+}
+
+/* Variables Bootstrap override */
+:root {
+  --bs-secondary-color: #d0d0d0 !important;
+  --bs-muted: #b0b0b0 !important;
+}
+
+/* Styles pour les éléments sombres avec texte clair */
+.bg-dark .text-dark,
+.bg-secondary .text-dark,
+.navbar-dark .text-dark {
+  color: var(--text-light) !important;
+}
+
+/* Force les couleurs pour toutes les variantes de muted */
+.text-muted,
+.text-muted.small,
+small.text-muted,
+.small.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Supprime ou améliore le surlignage du classement */
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: transparent !important;
+  border-color: rgba(0, 191, 255, 0.3) !important;
+}
+
+/* Alternative: Surlignage subtil et visible */
+.table-primary {
+  background-color: rgba(0, 191, 255, 0.1) !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+/* Supprime complètement le surlignage si préféré */
+.table > tbody > tr.table-primary {
+  background-color: transparent !important;
+}
+
+/* Supprime le surlignage au survol */
+.table-hover > tbody > tr:hover {
+  background-color: transparent !important;
+}
+
+.table > tbody > tr:hover {
+  background-color: transparent !important;
+}
+
+.table-hover tbody tr:hover {
+  background-color: transparent !important;
+}
+
+/* Supprime tous les effets de survol sur les tableaux */
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: transparent !important;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: transparent !important;
+}
+
+/* Force la suppression de tout surlignage Bootstrap */
+.table-striped > tbody > tr:nth-of-type(odd):hover {
+  background-color: transparent !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even):hover {
+  background-color: transparent !important;
+}
+
+/* Styles pour les cartes et conteneurs */
+.card {
+  background-color: var(--glassmorphism-bg) !important;
+  color: var(--text-light) !important;
+  border: 1px solid var(--glassmorphism-border) !important;
+}
+
+/* Styles pour les boutons */
+.btn-outline-light {
+  color: var(--text-light) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-light) !important;
+}
+
+/* Styles pour les boutons */
+.btn-primary-custom {
+  background: linear-gradient(45deg, var(--primary-color), #0099cc);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary-custom:hover {
+  background: linear-gradient(45deg, #0099cc, var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Styles pour les formulaires */
+.form-control-custom {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+  color: var(--text-light);
+}
+
+.form-control-custom::placeholder {
+  color: var(--text-muted);
+}
+
+/* Styles pour les badges */
+.badge-custom {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 15px;
+  }
+  
+  .card-custom {
+    margin-bottom: 20px;
+  }
+}
+
+/* Styles pour les loader */
+.spinner-custom {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Styles pour les notifications */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 600;
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Styles pour les notifications avec actions */
+.notification-with-action {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: linear-gradient(135deg, rgba(15, 12, 41, 0.95), rgba(48, 43, 99, 0.95)) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 191, 255, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  color: white !important;
+  z-index: 10000 !important;
+  min-width: 350px !important;
+  max-width: 400px !important;
+  box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2) !important;
+  animation: slideInRight 0.4s ease-out !important;
+}
+
+/* Styles pour les modals personnalisées */
+.modal-custom {
+  backdrop-filter: blur(10px);
+}
+
+/* Force absolue de la transparence - toutes les variantes possibles */
+.modal-custom .modal-content,
+.modal.modal-custom .modal-content,
+.modal.show.modal-custom .modal-content,
+.modal.modal-custom .modal-dialog .modal-content,
+.modal.show.modal-custom .modal-dialog .modal-content,
+div.modal-custom .modal-content,
+.modal-custom .modal-dialog .modal-content {
+  background: rgba(15, 12, 41, 0.85) !important;
+  background-color: rgba(15, 12, 41, 0.85) !important;
+  background-image: none !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glassmorphism-border) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2) !important;
+}
+
+.modal-custom .modal-header {
+  border-bottom: 1px solid var(--glassmorphism-border);
+  background: rgba(0, 191, 255, 0.1);
+}
+
+.modal-custom .modal-footer {
+  border-top: 1px solid var(--glassmorphism-border);
+  background: rgba(0, 191, 255, 0.05);
+}
+
+/* Styles pour tous les éléments de formulaire */
+.modal-custom .form-control,
+.modal-custom .form-select,
+.modal-custom .form-check-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid var(--glassmorphism-border) !important;
+  color: white !important;
+  border-radius: var(--border-radius) !important;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+/* États de focus pour les champs */
+.modal-custom .form-control:focus,
+.modal-custom .form-select:focus,
+.modal-custom .form-check-input:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25) !important;
+  outline: none !important;
+}
+
+/* États de hover pour les champs */
+.modal-custom .form-control:hover,
+.modal-custom .form-select:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(0, 191, 255, 0.5) !important;
+}
+
+/* Placeholder pour les champs de texte */
+.modal-custom .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-style: italic;
+}
+
+/* Options des select */
+.modal-custom .form-select option {
+  background: var(--dark-bg) !important;
+  color: white !important;
+  padding: 0.5rem 1rem;
+}
+
+.modal-custom .form-select optgroup {
+  background: var(--medium-bg) !important;
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Labels des formulaires */
+.modal-custom .form-label {
+  color: white !important;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 0.95rem;
+}
+
+/* Styles pour les textarea */
+.modal-custom textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Styles pour les input number */
+.modal-custom input[type="number"].form-control {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.modal-custom input[type="number"]::-webkit-outer-spin-button,
+.modal-custom input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Animation pour les champs invalides */
+.modal-custom .form-control:invalid,
+.modal-custom .form-select:invalid {
+  border-color: var(--danger-color) !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Styles pour les boutons dans les modals */
+.modal-custom .btn {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.modal-custom .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
