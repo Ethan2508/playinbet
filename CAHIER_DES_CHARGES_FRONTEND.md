@@ -1,11 +1,11 @@
-# 📋 Cahier des Charges - Frontend PlayInBet
+# Cahier des Charges - Frontend PlayInBet
 
-## 🎯 **Objectif du Projet**
+## Objectif du Projet
 Développer une interface utilisateur moderne et intuitive pour la plateforme de duels gaming PlayInBet, permettant aux utilisateurs de créer des duels, participer à des tournois et gérer leur portefeuille virtuel.
 
 ---
 
-## 🛠️ **Stack Technique Imposée**
+## Stack Technique
 
 ### Technologies Frontend
 - **Framework** : React 18+ avec hooks
@@ -22,7 +22,7 @@ Développer une interface utilisateur moderne et intuitive pour la plateforme de
 
 ---
 
-## 🎨 **Design System**
+## Design System
 
 ### Palette de Couleurs
 ```css
@@ -49,70 +49,70 @@ Développer une interface utilisateur moderne et intuitive pour la plateforme de
 
 ---
 
-## 📱 **Pages & Composants Requis**
+## Pages et Composants Requis
 
-### 🔐 **Authentification**
+### Authentification
 - [x] **LoginForm.js** - Connexion utilisateur
 - [x] **RegisterForm.js** - Inscription utilisateur
 - **Fonctionnalités** :
   - Validation temps réel
   - Messages d'erreur clairs
   - Redirection automatique
-  - Remember me option
+  - Option "Se souvenir de moi"
 
-### 🏠 **Navigation**
+### Navigation
 - [x] **Sidebar.js** - Menu principal
 - [x] **Header.jsx** - Barre supérieure
 - **Exigences** :
   - Navigation responsive
   - Indicateurs actifs
-  - Collapse mobile
-  - Logout rapide
+  - Menu repliable mobile
+  - Déconnexion rapide
 
-### 🎮 **Duels**
+### Duels
 - [x] **Matches.js** - Liste des duels
 - [x] **CreateDuelForm.js** - Création de duel
 - [x] **DuelRoom.js** - Salle de duel
-- **Fonctionnalités critiques** :
-  - Filtres par jeu/status
-  - Timer temps réel
-  - Upload screenshots
+- **Fonctionnalités** :
+  - Filtres par jeu et statut
+  - Timer en temps réel
+  - Upload de captures d'écran
   - Chat intégré
-  - Notifications live
+  - Notifications en direct
 
-### 🏆 **Tournois**
+### Tournois
 - [x] **Tournaments.js** - Gestion tournois
 - **Exigences** :
-  - Bracket visualization
-  - Inscription/désinscription
-  - Suivi progression
-  - Classements temps réel
+  - Visualisation des brackets
+  - Inscription et désinscription
+  - Suivi de progression
+  - Classements en temps réel
 
-### 👤 **Profil & KYC**
+### Profil et KYC
 - [x] **Profile.js** - Profil utilisateur
-- [x] **KYCVerificationModal.js** - Vérification identité
+- [x] **KYCVerificationModal.js** - Vérification d'identité
 - **Fonctionnalités** :
-  - Édition profil
-  - Upload documents
-  - Historique transactions
+  - Édition de profil
+  - Upload de documents
+  - Historique des transactions
   - Statistiques détaillées
 
-### 💰 **Portefeuille**
-- [x] **Wallet.js** - Gestion argent
+### Portefeuille
+- [x] **Wallet.js** - Gestion financière
 - **Exigences** :
-  - Historique transactions
+  - Historique des transactions
   - Demandes de retrait
-  - Graphiques revenus
+  - Graphiques des revenus
   - Validation sécurisée
 
-### 🛒 **Shop**
+### Boutique
 - [x] **Shop.js** - Boutique virtuelle
 - **Fonctionnalités** :
-  - Achat tickets
-  - Cosmétiques
-  - Système de réduction
+  - Achat de tickets
+  - Articles cosmétiques
+  - Système de réductions
 
-### 📊 **Classements**
+### Classements
 - [x] **Leaderboard.js** - Classements
 - **Exigences** :
   - Filtres multiples
@@ -121,7 +121,7 @@ Développer une interface utilisateur moderne et intuitive pour la plateforme de
 
 ---
 
-## 🔒 **Sécurité Frontend**
+## Sécurité Frontend
 
 ### Authentification
 - **JWT Storage** : localStorage avec expiration
@@ -137,13 +137,13 @@ Développer une interface utilisateur moderne et intuitive pour la plateforme de
 
 ---
 
-## 📊 **Performance & UX**
+## Performance et Expérience Utilisateur
 
 ### Optimisations Requises
 - **Lazy Loading** : Pages et images
 - **Code Splitting** : Par routes
 - **Memoization** : React.memo sur composants lourds
-- **Debouncing** : Recherches et API calls
+- **Debouncing** : Recherches et appels API
 - **Cache Strategy** : localStorage pour données statiques
 
 ### Indicateurs de Performance
@@ -154,83 +154,83 @@ Développer une interface utilisateur moderne et intuitive pour la plateforme de
 
 ---
 
-## 🎯 **Fonctionnalités Prioritaires**
+## Priorités de Développement
 
-### 🚨 **P0 - Critique (Doit Marcher)**
+### P0 - Critique (Doit Fonctionner)
 1. **Connexion/Inscription** - Fluidité absolue
 2. **Navigation principale** - Sidebar responsive
-3. **Liste duels** - Affichage et filtres
-4. **Création duel** - Form complète
-5. **Salle de duel** - Timer + actions
+3. **Liste des duels** - Affichage et filtres
+4. **Création de duel** - Formulaire complet
+5. **Salle de duel** - Timer et actions
 
-### ⚡ **P1 - Important (Très Souhaité)**
+### P1 - Important (Très Souhaité)
 1. **Notifications temps réel** - WebSocket
-2. **Upload screenshots** - Drag & drop
-3. **Profile complet** - Édition + stats
-4. **KYC modal** - Documents upload
-5. **Wallet transactions** - Historique
+2. **Upload de captures** - Drag & drop
+3. **Profil complet** - Édition et statistiques
+4. **Modal KYC** - Upload de documents
+5. **Transactions portefeuille** - Historique
 
-### 🎨 **P2 - Nice to Have (Améliorations)**
-1. **Animations transitions** - Framer Motion
-2. **Dark/Light mode** - Toggle
-3. **Sound effects** - Actions feedback
-4. **Advanced filters** - Recherche multicritères
-5. **Charts dashboard** - Visualisations
+### P2 - Améliorations (Nice to Have)
+1. **Animations de transition** - Framer Motion
+2. **Mode sombre/clair** - Toggle
+3. **Effets sonores** - Feedback des actions
+4. **Filtres avancés** - Recherche multicritères
+5. **Tableaux de bord** - Visualisations graphiques
 
 ---
 
-## 🐛 **Bugs Connus à Corriger**
+## Bugs Connus à Corriger
 
-### 🔴 **Critiques**
+### Critiques
 - [ ] **Timer duel** - Décalage après pause
 - [ ] **Navigation mobile** - Menu ne se ferme pas
-- [ ] **Upload files** - Progress bar manquante
-- [ ] **Responsive tables** - Overflow mobile
+- [ ] **Upload de fichiers** - Barre de progression manquante
+- [ ] **Tables responsive** - Débordement sur mobile
 
-### 🟡 **Moyens**
-- [ ] **Form validation** - Messages pas clairs
-- [ ] **Loading states** - Spinners manquants
+### Moyens
+- [ ] **Validation de formulaires** - Messages peu clairs
+- [ ] **États de chargement** - Spinners manquants
 - [ ] **Error boundaries** - Crashes non gérés
-- [ ] **Memory leaks** - useEffect cleanup
+- [ ] **Memory leaks** - Nettoyage useEffect
 
-### 🟢 **Mineurs**
-- [ ] **CSS inconsistencies** - Spacing variables
-- [ ] **Accessibility** - ARIA labels manquants
+### Mineurs
+- [ ] **Cohérence CSS** - Variables d'espacement
+- [ ] **Accessibilité** - Labels ARIA manquants
 - [ ] **SEO** - Meta tags dynamiques
-- [ ] **Translations** - i18n preparation
+- [ ] **Traductions** - Préparation i18n
 
 ---
 
-## 📋 **Checklist Livraison**
+## Checklist de Livraison
 
-### ✅ **Code Quality**
-- [ ] ESLint configuration
-- [ ] Prettier formatting
+### Qualité du Code
+- [ ] Configuration ESLint
+- [ ] Formatage Prettier
 - [ ] PropTypes/TypeScript
-- [ ] Component documentation
-- [ ] Unit tests coverage > 70%
+- [ ] Documentation des composants
+- [ ] Couverture de tests > 70%
 
-### ✅ **Performance**
-- [ ] Bundle analysis
-- [ ] Lighthouse audit > 85
-- [ ] Mobile performance
-- [ ] Accessibility score > 90
+### Performance
+- [ ] Analyse du bundle
+- [ ] Audit Lighthouse > 85
+- [ ] Performance mobile
+- [ ] Score d'accessibilité > 90
 
-### ✅ **Browser Testing**
+### Tests Navigateurs
 - [ ] Chrome/Firefox/Safari
 - [ ] Mobile iOS/Android
-- [ ] Tablet responsiveness
-- [ ] Cross-browser consistency
+- [ ] Responsive tablette
+- [ ] Cohérence cross-browser
 
-### ✅ **Documentation**
-- [ ] Component Storybook
-- [ ] Setup instructions
-- [ ] Deployment guide
-- [ ] Environment variables
+### Documentation
+- [ ] Storybook des composants
+- [ ] Instructions d'installation
+- [ ] Guide de déploiement
+- [ ] Variables d'environnement
 
 ---
 
-## 🚀 **Déploiement**
+## Déploiement
 
 ### Build Production
 ```bash
@@ -254,20 +254,20 @@ REACT_APP_ENVIRONMENT=production
 
 ---
 
-## 📞 **Contact & Support**
+## Contact et Support
 
 ### Développeur Frontend
 - **Responsabilités** : Interface utilisateur uniquement
 - **Backend** : API REST fournie et fonctionnelle
-- **Livraison** : 2-3 semaines maximum
-- **Support** : GitHub Issues + documentation
+- **Délai de livraison** : 2-3 semaines maximum
+- **Support** : GitHub Issues et documentation
 
-### Resources
-- **Design** : Figma mockups (si disponible)
-- **API Docs** : README.md + Postman collection
-- **GitHub** : https://github.com/Ethan2508/playinbet
-- **Demo Live** : URL après déploiement
+### Ressources
+- **Design** : Mockups Figma (si disponible)
+- **Documentation API** : README.md + collection Postman
+- **Repository GitHub** : https://github.com/Ethan2508/playinbet
+- **Demo en ligne** : URL après déploiement
 
 ---
 
-*Ce cahier des charges est évolutif et peut être ajusté selon les retours utilisateurs et les contraintes techniques découvertes en cours de développement.*
+*Ce cahier des charges peut être ajusté selon les retours utilisateurs et les contraintes techniques découvertes en cours de développement.*
